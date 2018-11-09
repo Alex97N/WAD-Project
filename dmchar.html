@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Duel Links World</title>
     <link href="css/style.css" rel="stylesheet"/>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 <style>
 html{
     
@@ -62,29 +63,103 @@ html{
     </ul>
 </nav>
 
-<div class="sidenav">
-  <a href="#about">Yami Yugi</a>
-  <a href="#about">Seto Kaiba</a>
-  <a href="#about">Joey Wheeler</a>
-  <a href="#about">Mai Valentine</a>
-  <a href="#about">Tea Gardner</a>
-  <a href="#about">Weevil Underwood</a>
-  <a href="#about">Rex Raptor</a>
-  <a href="#about">Mako Tsunami</a>
-  <a href="#about">Bandit Keith</a>
-  <a href="#about">Odion</a>
-  <a href="#about">Ishizu Ishtar</a>
-  <a href="#about">Maximillion Pegasus</a>
-  <a href="#about">Yami Bakura</a>
-  <a href="#about">Yami Marik</a>
-  <a href="#about">Yugi Muto</a>
-  <a href="#about">Paradox Brothers</a>
-  <a href="#about">Mokuba Kaiba</a>
-  <a href="#about">Marik Ishtar</a>
-  <a href="#about">Arkana</a>
-  <a href="#about">Bonz</a>
-  <a href="#about">Espa Roba</a>
-  <a href="#about">Tristan Taylor</a>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a onclick="changeDiv('1')">Yami Yugi</a>
+  <a onclick="changeDiv('2')">Seto Kaiba</a>
+  <a onclick="changeDiv('3')">Joey Wheeler</a>
+  <a onclick="changeDiv('4')">Mai Valentine</a>
+  <a onclick="changeDiv('5')">Tea Gardner</a>
+  <a onclick="changeDiv('6')">Weevil Underwood</a>
+  <a onclick="changeDiv('7')">Rex Raptor</a>
+  <a onclick="changeDiv('8')">Mako Tsunami</a>
+  <a onclick="changeDiv('9')">Bandit Keith</a>
+  <a onclick="changeDiv('10')">Odion</a>
+  <a onclick="changeDiv('11')">Ishizu Ishtar</a>
+  <a onclick="changeDiv('12')">Maximillion Pegasus</a>
+  <a onclick="changeDiv('13')">Yami Bakura</a>
+  <a onclick="changeDiv('14')">Yami Marik</a>
+  <a onclick="changeDiv('15')">Yugi Muto</a>
+  <a onclick="changeDiv('16')">Paradox Brothers</a>
+  <a onclick="changeDiv('17')">Mokuba Kaiba</a>
+  <a onclick="changeDiv('18')">Marik Ishtar</a>
+  <a onclick="changeDiv('19')">Arkana</a>
+  <a onclick="changeDiv('20')">Bonz</a>
+  <a onclick="changeDiv('21')">Espa Roba</a>
+  <a onclick="changeDiv('22')">Tristan Taylor</a>
+</div>
+
+<div>
+	<button style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</button>
+</div>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+}
+</script>
+
+<script type="text/javascript">
+   function changeDiv(link)
+   {
+	var contentDiv = $('#content');
+	if (link == '1')
+		contentDiv.html('<button> Yami Yugi </button>');
+	if (link == '2')
+		contentDiv.html('<button> Seto Kaiba </button>');
+	if (link == '3')
+        contentDiv.html('<button> Joey Wheeler </button>');
+	if (link == '4')
+        contentDiv.html('<button> Mai Valentine </button>');
+	if (link == '5')
+        contentDiv.html('<button> Tea Gardner </button>');
+	if (link == '6')
+        contentDiv.html('<button> Weevil Underwood </button>');
+	if (link == '7')
+		contentDiv.html('<button> Rex Raptor </button>');
+	if (link == '8')
+		contentDiv.html('<button> Mako Tsunami </button>');
+	if (link == '9')
+		contentDiv.html('<button> Bandit Keith </button>');
+	if (link == '10')
+		contentDiv.html('<button> Odion </button>');
+	if (link == '11')
+		contentDiv.html('<button> Ishizu Ishtar </button>');
+	if (link == '12')
+		contentDiv.html('<button> Maximillion Pegasus </button>');
+	if (link == '13')
+		contentDiv.html('<button> Yami Bakura </button>');
+	if (link == '14')
+		contentDiv.html('<button> Yami Marik </button>');
+	if (link == '15')
+		contentDiv.html('<button> Yugi Muto </button>');
+	if (link == '16')
+		contentDiv.html('<button> Paradox Brothers </button>');		
+	if (link == '17')
+		contentDiv.html('<button> Mokuba Kaiba </button>');
+	if (link == '18')
+		contentDiv.html('<button> Marik Ishtar </button>');
+	if (link == '19')
+		contentDiv.html('<button> Arkana </button>');	
+	if (link == '20')
+		contentDiv.html('<button> Bonz </button>');
+	if (link == '21')
+        contentDiv.html('<button> Espa Roba </button>');
+	if (link == '22')
+		contentDiv.html('<button> Tristan Taylor </button>');
+   }
+</script>
+
+<div id="content">
+	
 </div>
 
 </body>

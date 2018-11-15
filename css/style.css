@@ -80,46 +80,53 @@ nav ul > li.sub li.sub{
 
 .sidenav {
     height: 100%;
-    width: 200px;
-    position: center;
+    width: 0;
+    position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #333;
+    background-color: #111;
     overflow-x: hidden;
-    padding-top: 20px;
+    transition: 0.5s;
+    padding-top: 60px;
 }
 
-/* Style the sidenav links and the dropdown button */
-.sidenav a, .dropdown-btn {
-    padding: 6px 8px 6px 10px;
+.sidenav a {
+    padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     color: #818181;
     display: block;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    outline: none;
+    transition: 0.3s;
 }
 
-/* On mouse-over */
-.sidenav a:hover, .dropdown-btn:hover {
+.sidenav a:hover {
     color: #f1f1f1;
 }
 
-/* Main content */
-.main {
-    margin-left: 200px; /* Same as the width of the sidenav */
-    font-size: 20px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
 
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
 
-/* Some media queries for responsiveness */
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.square{
+    background-color: gray;
+	position: absolute;
+	height: 75%;
+	width: 60%;
+	left: 20%;
+	top: 25%;
 }

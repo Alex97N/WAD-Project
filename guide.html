@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Duel Links World</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/w3-theme-black.css">
+<link rel="stylesheet" href="css.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+	<a class="w3-bar-item w3-button w3-right w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="home.html" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+	<a href="guide.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Guide</a>
+    <a href="characters.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Characters</a>
+    <a href="decks.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Decks</a>
+    <a href="news.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l4 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-padding-large w3-hover-black" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Menu</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="guide.html">Beginner's Guide</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="guide/gems.html">Gem's Guide</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="guide/autoduel.html">Auto Duel & LVL UP</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="guide/boxes.html">Boxes</a>
+</nav>
+
+<div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:100px">
+
+	<div class="w3-row w3-padding-64">
+		<div class="w3-twothird w3-container">
+			<h1 class="w3-text-teal">Tutorial</h1>
+			<h3 class="w3-text-bottom">Follow the tutorial to learn the basic controls of Duel Links!<h3>
+		</div>	
+	</div>
+	<div class="w3-row w3-padding-64">
+		<div class="w3-third w3-container">
+			<img src="guide/images/11.jpg"></img>
+		</div>	
+		<div class="w3-third w3-container">
+			<img src="guide/images/12.jpg"></img>
+		</div>	
+		<div class="w3-third w3-container">
+			<img src="guide/images/13.jpg"></img>
+		</div>	
+	</div>
+	
+	
+	<div class="w3-row w3-padding-64">
+		<div class="w3-twothird w3-container">
+			<h1 class="w3-text-teal">Duel Quiz</h1>
+			<h3 class="w3-text-bottom">Duel Quizzes will teach you how to Duel!<h3>
+		</div>	
+	</div>
+	<div class="w3-row w3-padding-64">
+		<div class="w3-third w3-container">
+			<img src="guide/images/21.jpg"></img>
+		</div>	
+		<div class="w3-third w3-container">
+			<img src="guide/images/22.jpg"></img>
+		</div>	
+		<div class="w3-third w3-container">
+			<img src="guide/images/23.jpg"></img>
+		</div>	
+	</div>
+	
+	
+	<div class="w3-row w3-padding-64">
+		<div class="w3-twothird w3-container">
+			<h1 class="w3-text-teal">Duel World</h1>
+			<h3 class="w3-text-bottom">Head out to Duel World other Duelists! Keep Dueling and your character will level up!<h3>
+		</div>	
+	</div>
+	<div class="w3-row w3-padding-64">
+		<div class="w3-third w3-container">
+			<img src="guide/images/31.jpg"></img>
+		</div>	
+		<div class="w3-third w3-container">
+			<img src="guide/images/32.jpg"></img>
+		</div>	
+		<div class="w3-third w3-container">
+			<img src="guide/images/33.jpg"></img>
+		</div>	
+	</div>
+
+	
+	<div class="w3-row w3-padding-64">
+		<div class="w3-twothird w3-container">
+			<h1 class="w3-text-teal">Buy Cards at the Shop</h1>
+			<h3 class="w3-text-bottom">Spend Gems at the Shop to purchase card packs!<h3>
+		</div>	
+	</div>
+	<div class="w3-row w3-padding-64">
+		<div class="w3-third w3-container">
+			<img src="guide/images/41.jpg"></img>
+		</div>	
+		<div class="w3-third w3-container">
+			<img src="guide/images/42.jpg"></img>
+		</div>	
+		<div class="w3-third w3-container">
+			<img src="guide/images/43.jpg"></img>
+		</div>	
+	</div>
+	
+	
+	<div class="w3-row w3-padding-64">
+		<div class="w3-twothird w3-container">
+			<h1 class="w3-text-teal">Building a Deck</h1>
+			<h3 class="w3-text-bottom">Build your very own Deck with the Deck Editor! If you aren't sure of what cards to put in your deck, the "Create Auto-Deck" feature will build a Deck for you! Once your Deck is ready, head back to Duel World and try it out!<h3>
+		</div>	
+	</div>
+	<div class="w3-row w3-padding-64">
+		<div class="w3-third w3-container">
+			<img src="guide/images/51.jpg"></img>
+		</div>	
+		<div class="w3-third w3-container">
+			<img src="guide/images/52.jpg"></img>
+		</div>	
+		<div class="w3-third w3-container">
+			<img src="guide/images/53.jpg"></img>
+		</div>	
+	</div>
+	
+	<div class="w3-container w3-center w3-padding-32">
+		<div class="w3-container w3-center">
+			<h2 class="w3-text-teal">When you get used to Dueling...</h2>
+			<img src="guide/images/pvp.png"></img>
+		</div>
+	</div>
+<!-- END MAIN -->
+</div>
+
+<footer id="myFooter">
+		<div class="w3-container w3-theme-l2 w3-padding-32 w3-center">
+			<h4>Duel Links World</h4>
+		</div>
+
+		<div class="w3-container w3-theme-l1 w3-center">
+		<p>Powered by KONAMI</p>
+		</div>
+	</footer>
+
+<script>
+
+function w3_open() {
+    document.getElementById("mySidebar").style.width = "250px";
+	document.getElementById("myOverlay").style.display = "block"
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.width = "0px";
+	document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>

@@ -1,166 +1,289 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Duel Links World</title>
-    <link href="css/style.css" rel="stylesheet"/>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-<body>
+<html lang="en">
+<title>Duel Links World</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/w3-theme-black.css">
+<link rel="stylesheet" href="css.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 <style>
-html{
-    
-    background-image: url("images/backg.jpg");
-
-    height: 150%; 
-	
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
 }
-</style>	
-</head>
+</style>
 <body>
-<nav>
-    <ul>
-        <li class="sub">
-            <a href="home.html">Home</a>
-            <ul>
-                <li><a href="ygo.html">Yu-Gi-Oh!</a></li>
-                <li class="sub">
-                    <a>Series</a>
-                    <ul>
-                        <li><a href="dm.html">DM</a></li>
-                        <li><a href="gx.html">GX</a></li>
-						<li><a href="5ds.html">5Ds</a></li>             
-                    </ul>
-                </li>
-            </ul>
-        </li>
-		<li class="sub">
-            <a>Characters</a>
-            <ul>
-                <li><a href="dmchar.html">DM</a></li>
-                <li><a href="gxchar.html">GX</a></li>
-                <li><a href="5dschar.html">5Ds</a></li>
-            </ul>
-        </li>
-        <li class="sub">
-            <a>Decks</a>
-            <ul>
-                <li><a href="pvp.html">PvP</a></li>
-                <li><a href="pve.html">PvE</a></li>
-                <li><a href="farm.html">Farm</a></li>
-            </ul>
-        </li>
-        <li class="sub">
-            <a>Tips</a>
-            <ul>
-                <li><a href="gems.html">Gems</a></li>
-                <li><a href="cards.html">Cards</a></li>
-				<li><a href="strategies.html">Strategies</a></li>
-            </ul>
-        </li>
-        <li><a href="news.html">News</a></li>
-    </ul>
-</nav>
 
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a onclick="changeDiv('1')">Yami Yugi</a>
-  <a onclick="changeDiv('2')">Seto Kaiba</a>
-  <a onclick="changeDiv('3')">Joey Wheeler</a>
-  <a onclick="changeDiv('4')">Mai Valentine</a>
-  <a onclick="changeDiv('5')">Tea Gardner</a>
-  <a onclick="changeDiv('6')">Weevil Underwood</a>
-  <a onclick="changeDiv('7')">Rex Raptor</a>
-  <a onclick="changeDiv('8')">Mako Tsunami</a>
-  <a onclick="changeDiv('9')">Bandit Keith</a>
-  <a onclick="changeDiv('10')">Odion</a>
-  <a onclick="changeDiv('11')">Ishizu Ishtar</a>
-  <a onclick="changeDiv('12')">Maximillion Pegasus</a>
-  <a onclick="changeDiv('13')">Yami Bakura</a>
-  <a onclick="changeDiv('14')">Yami Marik</a>
-  <a onclick="changeDiv('15')">Yugi Muto</a>
-  <a onclick="changeDiv('16')">Paradox Brothers</a>
-  <a onclick="changeDiv('17')">Mokuba Kaiba</a>
-  <a onclick="changeDiv('18')">Marik Ishtar</a>
-  <a onclick="changeDiv('19')">Arkana</a>
-  <a onclick="changeDiv('20')">Bonz</a>
-  <a onclick="changeDiv('21')">Espa Roba</a>
-  <a onclick="changeDiv('22')">Tristan Taylor</a>
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+	<a class="w3-bar-item w3-button w3-right w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="home.html" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+	<a href="guide.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Guide</a>
+    <a href="characters.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Characters</a>
+    <a href="decks.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Decks</a>
+    <a href="news.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>
+  </div>
 </div>
 
-<div>
-	<button style="font-size:30px;cursor:pointer;color:black" onclick="openNav()">Characters</button>
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l4 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-padding-large w3-hover-black" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Characters</b></h4>
+  <a onclick="changeCh('1')" class="w3-bar-item w3-button w3-hover-black">Yami Yugi</a>
+  <a onclick="changeCh('2')" class="w3-bar-item w3-button w3-hover-black">Seto Kaiba</a>
+  <a onclick="changeCh('3')" class="w3-bar-item w3-button w3-hover-black">Joey Wheeler</a>
+  <a onclick="changeCh('4')" class="w3-bar-item w3-button w3-hover-black">Mai Valentine</a>
+  <a onclick="changeCh('5')" class="w3-bar-item w3-button w3-hover-black">Tea Gardner</a>
+  <a onclick="changeCh('6')" class="w3-bar-item w3-button w3-hover-black">Weevil Underwood</a>
+  <a onclick="changeCh('7')" class="w3-bar-item w3-button w3-hover-black">Rex Raptor</a>
+  <a onclick="changeCh('8')" class="w3-bar-item w3-button w3-hover-black">Mako Tsunami</a>
+  <a onclick="changeCh('9')" class="w3-bar-item w3-button w3-hover-black">Bandit Keith</a>
+  <a onclick="changeCh('10')" class="w3-bar-item w3-button w3-hover-black">Odion</a>
+  <a onclick="changeCh('11')" class="w3-bar-item w3-button w3-hover-black">Ishizu Ishtar</a>
+  <a onclick="changeCh('12')" class="w3-bar-item w3-button w3-hover-black">Maximillion Pegasus</a>
+  <a onclick="changeCh('13')" class="w3-bar-item w3-button w3-hover-black">Yami Bakura</a>
+  <a onclick="changeCh('14')" class="w3-bar-item w3-button w3-hover-black">Yami Marik</a>
+  <a onclick="changeCh('15')" class="w3-bar-item w3-button w3-hover-black">Yugi Muto</a>
+  <a onclick="changeCh('16')" class="w3-bar-item w3-button w3-hover-black">Paradox Brothers</a>
+  <a onclick="changeCh('17')" class="w3-bar-item w3-button w3-hover-black">Mokuba Kaiba</a>
+  <a onclick="changeCh('18')" class="w3-bar-item w3-button w3-hover-black">Arkana</a>
+  <a onclick="changeCh('19')" class="w3-bar-item w3-button w3-hover-black">Bonz</a>
+  <a onclick="changeCh('20')" class="w3-bar-item w3-button w3-hover-black">Espa Roba</a>
+</nav>
+
+<div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+	
+	<div class="w3-row w3-padding-64">
+		<div class="w3-half w3-container" >
+			<h1 class="w3-text-teal" id="charName">Yami Yugi</h1>
+			<h3 class="w3-text-bottom" id="charDesc">When Yugi Muto completed the Millennium Puzzle, he was infused with Yami Yugi's spirit. He is a Duelist of incredible power, battling Seto Kaiba and countless other rivals in Duels of blistering ferocity. His Deck relies on DARK-Attribute cards, such as "Dark Magician" and "Kuriboh." Obtainable during the tutorial (you must choose between Yami Yugi and Seto Kaiba). If not chosen during the tutorial, Character Unlock Missions appear at Stage 16.<h3>
+		</div>	
+		<div class="w3-half w3-container w3-image">
+			<img src="images/characters/dm/dm01.png" id="charProf"></img>
+		</div>
+	</div>
+	
+	<div class="w3-row w3-padding-64">
+		<div class="w3-half w3-container w3-image">
+			<img src="images/cards/dm/c1.jpg" id="card1"></img>
+		</div>	
+		<div class="w3-half w3-container w3-image">
+			<img src="images/cards/dm/c2.jpg" id="card2"></img>
+		</div>
+	</div>
+	
+<!-- END MAIN -->
 </div>
 
 <script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+
+function w3_open() {
+    document.getElementById("mySidebar").style.width = "250px";
+	document.getElementById("myOverlay").style.display = "block"
 }
 
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-    document.body.style.backgroundColor = "white";
+function w3_close() {
+    document.getElementById("mySidebar").style.width = "0px";
+	document.getElementById("myOverlay").style.display = "none";
 }
 </script>
 
 <script type="text/javascript">
-   function changeDiv(link)
-   {
-	var contentDiv = $('#content');
-	if (link == '1')
-		contentDiv.html('<div class="square"><h1>Yami Yugi<h1><img src="images/yugi.png"><h3>Yami Yugi, known as Dark Yugi in the manga and Japanese versions, and also referred to as the Nameless Pharaoh, is the spirit of Pharaoh Atem that has been sealed in the Millennium Puzzle. He is the protagonist of the original and second series, along with Yugi Muto.</h3><h3>Together with Yugi he holds the title "King of Games" (King of Duelists in Japanese version), by winning in the Duelist Kingdom, Battle City, Grand Championship and Battle City V2 (in GX anime) tournaments.</h3><h3></h3></div>');																										
-	if (link == '2')
-		contentDiv.html('<div class="square"><h1>Seto Kaiba<h1><img src="images/seto.png"><h3>Seto Kaiba (海かい馬ば 瀬せ人と Kaiba Seto) is one of the main characters of the Yu-Gi-Oh! anime. He is the older brother of Mokuba. Priest Seto is his Egyptian incarnation. He is the modern-day lookalike counterpart of Priest Seto himself, the original keeper of the Blue-Eyes White Dragon.</h3><h3>Kaiba is largely considered an anti-hero, as his motives are usually egocentric and his personality traits are selfish and arrogant, but he does sometimes help Yugi and his friends if it’s in his best interest (although there are a few occasions where he helps Yugi when faced with a common enemy).</h3><h3></h3></div>');	
-	if (link == '3')
-        contentDiv.html('<div class="square"><h1>Joey Wheeler<h1>');																										
-	if (link == '4')
-		contentDiv.html('<div class="square"><h1>Mai Valentine<h1>');	
-	if (link == '5')
-		contentDiv.html('<div class="square"><h1>Tea Gardner><h1>');
-	if (link == '6')
-		contentDiv.html('<div class="square"><h1>Weevil Underwood<h1>');
-	if (link == '7')
-		contentDiv.html('<div class="square"><h1>Rex Raptor<h1>');
-	if (link == '8')
-		contentDiv.html('<div class="square"><h1>Mako Tsunami<h1>');
-	if (link == '9')
-		contentDiv.html('<div class="square"><h1>Bandit Keith<h1>');
-	if (link == '10')
-		contentDiv.html('<div class="square"><h1>Odion<h1>');
-	if (link == '11')
-		contentDiv.html('<div class="square"><h1>Ishizu Ishtar<h1>');
-	if (link == '12')
-		contentDiv.html('<div class="square"><h1>Maximillion Pegasus<h1>');
-	if (link == '13')
-		contentDiv.html('<div class="square"><h1>Yami Bakura<h1>');
-	if (link == '14')
-		contentDiv.html('<div class="square"><h1>Yami Marik<h1>');
-	if (link == '15')
-		contentDiv.html('<div class="square"><h1>Yugi Muto<h1>');
-	if (link == '16')
-		contentDiv.html('<div class="square"><h1>Paradox Brothers<h1>');	
-	if (link == '17')
-		contentDiv.html('<div class="square"><h1>Mokuba Kaiba<h1>');
-	if (link == '18')
-		contentDiv.html('<div class="square"><h1>Marik Ishtar<h1>');
-	if (link == '19')
-		contentDiv.html('<div class="square"><h1>Arkana<h1>');
-	if (link == '20')
-		contentDiv.html('<div class="square"><h1>Bonz<h1>');
-	if (link == '21')
-		contentDiv.html('<div class="square"><h1>Espa Roba<h1>');
-	if (link == '22')
-		contentDiv.html('<div class="square"><h1>Tristan Taylor<h1>');
-   }
+	
+	function changeCh(el){
+		var name = $('#charName');
+		var desc = $('#charDesc');
+		var prof = document.getElementById('charProf');
+		var c1 = document.getElementById('card1');
+		var c2 = document.getElementById('card2');
+		
+		if(el == '1'){
+			name.text('Yami Yugi');
+			desc.text('When Yugi Muto completed the Millennium Puzzle, he was infused with Yami Yugi\'s spirit. He is a Duelist of incredible power, battling Seto Kaiba and countless other rivals in Duels of blistering ferocity. His Deck relies on DARK-Attribute cards, such as "Dark Magician" and "Kuriboh." Obtainable during the tutorial (you must choose between Yami Yugi and Seto Kaiba). If not chosen during the tutorial, Character Unlock Missions appear at Stage 16.');
+			prof.src = "images/characters/dm/dm01.png";
+			c1.src = "images/cards/dm/c1.jpg";
+			c2.src = "images/cards/dm/c2.jpg";
+		}
+		
+		if(el == '2'){
+			name.text('Seto Kaiba');
+			desc.text('Despite being a student at Domino High School, Seto Kaiba is also the young President of KaibaCorp. His arrogance may make him difficult to like, but his top-notch Dueling ability cannot be doubted. He loves no card more than his "Blue-Eyes White Dragon," and he favors Decks that unleash devastating attacks. Obtainable during the tutorial (you must choose between Yami Yugi and Seto Kaiba). If not chosen during the tutorial, Character Unlock Missions appear at Stage 16.');
+			prof.src = "images/characters/dm/dm02.png";
+			c1.src = "images/cards/dm/c3.jpg";
+			c2.src = "images/cards/dm/c4.jpg";
+		}
+		
+		if(el == '3'){
+			name.text('Joey Wheeler');
+			desc.text('Yugi\'s loyal friend who also attends Domino High School. He may be a show-off, but he\'s kind at heart. While he started as a novice, many Duels have made him stand shoulder-to-shoulder with the greats. Joey is a gambler at heart, so he depends on luck and cards like "Time Wizard" to pull him through. He uses a Deck that\'s heavy with Warrior and Beast-Warrior cards, and his ace monster is the mighty "Red-Eyes B. Dragon." Appears at the Gate when you reach Stage 3. Obtainable by Dueling him at the Gate and winning.');
+			prof.src = "images/characters/dm/dm03.png";
+			c1.src = "images/cards/dm/c5.jpg";
+			c2.src = "images/cards/dm/c6.jpg";
+		}
+		
+		if(el == '4'){
+			name.text('Mai Valentine');
+			desc.text('A strong-willed Duelist who never wastes an opportunity to put the boys in their place. Though she once led a solitary life and trusted no one, her experiences with Joey and Yugi have taught her the value of friendship. Her Deck is mainly comprised of strong female monsters, such as "Harpie" and "Amazoness." Character Unlock Missions appear at Stage 10.');
+			prof.src = "images/characters/dm/dm04.png";
+			c1.src = "images/cards/dm/c7.jpg";
+			c2.src = "images/cards/dm/c8.jpg";
+		}
+		
+		if(el == '5'){
+			name.text('Tea Gardner');
+			desc.text('Tea is Yugi\'s childhood friend who dreams of becoming a professional dancer. Though she won\'t call herself a Duelist, her bravery won\'t allow her to back down from any Duel. Character Unlock Missions appear at Stage 6.');
+			prof.src = "images/characters/dm/dm05.png";
+			c1.src = "images/cards/dm/c9.jpg";
+			c2.src = "images/cards/dm/c2.jpg";
+		}
+		
+		if(el == '6'){
+			name.text('Weevil Underwood');
+			desc.text('Regional champion Weevil Underwood loves to buzz to victory with his Insect Deck. Nothing will stop Weevil from getting a win, even if it means throwing Yugi\'s cards into the ocean or messing with Joey\'s Deck. One of his favorite techniques is an Insect Combo using "Great Moth" and "Insect Queen." Character Unlock Missions appear by Dueling against Standard Duelists 100 times.');
+			prof.src = "images/characters/dm/dm07.png";
+			c1.src = "images/cards/dm/c10.jpg";
+			c2.src = "images/cards/dm/c11.jpg";
+		}
+		
+		if(el == '7'){
+			name.text('Rex Raptor');
+			desc.text('A skilled Duelist who finished second in the Regionals, Rex Raptor\'s strategy focuses on having his Dinosaurs stomp all over his foes with an aggressive offense. His prized possession is the rare "Red-Eyes B. Dragon," which he spent his lifetime to obtain. Character Unlock Missions appear at Stage 21.');
+			prof.src = "images/characters/dm/dm08.png";
+			c1.src = "images/cards/dm/c12.jpg";
+			c2.src = "images/cards/dm/c5.jpg";
+		}
+		
+		if(el == '8'){
+			name.text('Mako Tsunami');
+			desc.text('Mako Tsunami participates in many tournaments so that he can use the prize money to buy a fishing boat and sail the mighty waves. He masterfully used his Sea Deck to give Yugi and Joey some of the toughest Duels ever. His signature monster "The Legendary Fisherman" unleashes its true strength when it swims out into his "Umi" field. Character Unlock Missions appear by successfully Tribute Summoning a monster 150 times.');
+			prof.src = "images/characters/dm/dm09.png";
+			c1.src = "images/cards/dm/c13.jpg";
+			c2.src = "images/cards/dm/c14.jpg";
+		}
+		
+		if(el == '9'){
+			name.text('Bandit Keith');
+			desc.text('Intercontinental champion Bandit Keith has no qualms about using underhanded tactics to steal the win. His signature monster "Barrel Dragon" has an effect that enables it to destroy his opponent\'s card. Character Unlock Missions appear by winning Duels against Legendary Duelists 50 times.');
+			prof.src = "images/characters/dm/dm12.png";
+			c1.src = "images/cards/dm/c15.jpg";
+			c2.src = "images/cards/dm/c16.jpg";
+		}
+		
+		if(el == '10'){
+			name.text('Odion');
+			desc.text('Odion is the servant of the Ishtar family and has sworn his allegiance to Marik.  An honest Duelist who Duels fair and square, his Deck is comprised of Trap Monsters, such as "Embodiment of Apophis", to ensnare his unsuspecting opponents.');
+			prof.src = "images/characters/dm/dm14.png";
+			c1.src = "images/cards/dm/c17.jpg";
+			c2.src = "images/cards/dm/c18.jpg";
+		}
+		
+		if(el == '11'){
+			name.text('Ishizu Ishtar');
+			desc.text('Ishizu Ishtar is a descendant of the Gravekeeper family who have safeguarded the Millennium Items. She is determined to rescue her younger brother Marik from the darkness that has overtaken him. The power of her Millennium Necklace allows her to see the future.');
+			prof.src = "images/characters/dm/dm13.png";
+			c1.src = "images/cards/dm/c19.jpg";
+			c2.src = "images/cards/dm/c20.jpg";
+		}
+		
+		if(el == '12'){
+			name.text('Maximillion Pegasus');
+			desc.text('Maximillion Pegasus is the president of Industrial Illusions and the genius game designer who created Duel Monsters. He uses the power of his Millennium Eye to read his opponent\'s mind and see the cards in their hand. His Deck focuses on Toon Monsters to toy with his opponent. But when he gets serious, his "Relinquished" has an effect that enables it to absorb his opponent\'s monsters.');
+			prof.src = "images/characters/dm/dm15.png";
+			c1.src = "images/cards/dm/c21.jpg";
+			c2.src = "images/cards/dm/c22.jpg";
+		}
+		
+		if(el == '13'){
+			name.text('Yami Bakura');
+			desc.text('When Yugi\'s classmate Bakura was possessed by the evil spirit inside the Millennium Ring, he transformed into Yami Bakura. He is merciless and will stop at nothing to achieve his goal. Yami Bakura\'s Occult Deck focuses on Fiend and Zombie-Type cards.');
+			prof.src = "images/characters/dm/dm11.png";
+			c1.src = "images/cards/dm/c23.jpg";
+			c2.src = "images/cards/dm/c24.jpg";
+		}
+		
+		if(el == '14'){
+			name.text('Yami Marik');
+			desc.text('Yami Marik is Marik Ishtar\'s dark side created from the suffering he endured as a Gravekeeper. Cruel and vicious, he enjoys watching his opponents suffer. His appetite for destruction is incomprehensible. His "Lava Golem" can be summoned to the opponent\'s side of the field where it slowly puts the stranglehold on his foe.');
+			prof.src = "images/characters/dm/dm10.png";
+			c1.src = "images/cards/dm/c25.jpg";
+			c2.src = "images/cards/dm/c26.jpg";
+		}
+		
+		if(el == '15'){
+			name.text('Yugi Muto');
+			desc.text('Yugi Muto was a quiet, game-loving high school student leading an ordinary life... until he solved the Millennium Puzzle. Now destiny has opened the path to an unimaginable journey! His signature card is the mighty "Gandora the Dragon of Destruction" that has the power to wipe out everyone.');
+			prof.src = "images/characters/dm/dm06.png";
+			c1.src = "images/cards/dm/c27.jpg";
+			c2.src = "images/cards/dm/c28.jpg";
+		}
+		
+		if(el == '16'){
+			name.text('Paradox Brothers');
+			desc.text('Eliminators under Pegasus\'s employ, many Duelists did the Paradox Brothers destroy. Using their expert tag skills, they did their best to bludgeon Joey and Yugi in Duelist Kingdom\'s underground dungeon. They combined their three elemental gods「Sanga of the Thunder」,「Kazejin」and 「Suijin」to form their ace monster 「Gate Guardian」.');
+			prof.src = "images/characters/dm/dm19.png";
+			c1.src = "images/cards/dm/c29.jpg";
+			c2.src = "images/cards/dm/c30.jpg";
+		}
+		
+		if(el == '17'){
+			name.text('Mokuba Kaiba');
+			desc.text('Seto Kaiba\'s younger brother may only be in elementary school, but he\'s smart enough to be the Vice President of KaibaCorp.  A skilled gamer in his own right, Mokuba is a Capsule Monsters champion.  Whether those skills translate to being a Duelist is yet to be seen.');
+			prof.src = "images/characters/dm/dm17.png";
+			c1.src = "images/cards/dm/c3.jpg";
+			c2.src = "images/cards/dm/c31.jpg";
+		}
+		
+		if(el == '18'){
+			name.text('Arkana');
+			desc.text('One of Marik\'s nefarious Rare Hunters, Arkana believes he is the one true Master of Magicians. He has no qualms about harming his own cards - as long as it guarantees him a victory. During Battle City, Arkana faced Yami Yugi in a clash of Dark Magicians - where one mistake could lead to an eternity in the Shadow Realm.');
+			prof.src = "images/characters/dm/dm22.png";
+			c1.src = "images/cards/dm/c32.jpg";
+			c2.src = "images/cards/dm/c33.jpg";
+		}
+		
+		if(el == '19'){
+			name.text('Bonz');
+			desc.text('Bonz puts the fright in his foes with a Ghost Deck full of Zombies. Though he faithfully served Bandit Keith during Duelist Kingdom, his loyalty was rewarded with betrayal when Bandit Keith ditched Bonz after losing to Joey. Bonz also entered the Battle City Tournament, but Yami Bakura quickly spooked him out of the prelims.');
+			prof.src = "images/characters/dm/dm23.png";
+			c1.src = "images/cards/dm/c34.jpg";
+			c2.src = "images/cards/dm/c35.jpg";
+		}
+		
+		if(el == '20'){
+			name.text('Espa Roba');
+			desc.text('The psychic Espa Roba channels the energies of the universe to read his opponent\'s hand during a Duel - or so he claims. Unfortunately, Joey debunked his cosmic powers as a hoax during Battle City. But what isn\'t fake are his Dueling skills, punishing Joey with his ace monster "Jinzo".');
+			prof.src = "images/characters/dm/dm24.png";
+			c1.src = "images/cards/dm/c36.jpg";
+			c2.src = "images/cards/dm/c37.jpg";
+		}
+			
+	}
+	
+	
 </script>
 
-<div id="content">
-<div class="square"><div>
-</div>
+<footer id="myFooter">
+		<div class="w3-container w3-theme-l2 w3-padding-32 w3-center">
+			<h4>Duel Links World</h4>
+		</div>
+
+		<div class="w3-container w3-theme-l1 w3-center">
+		<p>Powered by KONAMI</p>
+		</div>
+</footer>
+
 </body>
 </html>

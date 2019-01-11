@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Duel Links World</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/w3-theme-black.css">
+<link rel="stylesheet" href="css.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+	<a class="w3-bar-item w3-button w3-right w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="home.html" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+	<a href="guide.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Guide</a>
+    <a href="characters.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Characters</a>
+    <a href="decks.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Decks</a>
+    <a href="news.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l4 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-padding-large w3-hover-black" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Decks</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/alien.html">Alien</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/amazoness.html">Amazoness</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/antimeta.html">Anti-Meta</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/antitrap.html">Anti-Trap</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/batteryman.html">Batteryman</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/blueeyes.html">Blue-Eyes</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/bujin.html">Bujin</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/burn.html">Burn</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/buster.html">Buster Blader DNA Surgery</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/cyberangel.html">Cyber Angel</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/cyberdark.html">Cyberdark</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/darkmagician.html">Dark Magician</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/dragunity.html">Dragunity</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/furhire.html">Fur Hire</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/geargia.html">Geargia</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/gemini.html">Gemini Beat</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/gladiator.html">Gladiator Beast</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/masked.html">Masked HERO</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/noble.html">Noble Knight</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/paleozoic.html">Paleozoic Raider</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/sea.html">Sea Stealth Attack</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/silentm.html">Silent Magician</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/silents.html">Silent Swordsman</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/spellbook.html">Spellbook</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/ua.html">U.A</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/vampire.html">Vampire</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/windup.html">Wind-Up</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/xsaber.html">X-Saber</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/xyzojama.html">XYZ Ojama</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="decks/yubel.html">Yubel</a>
+</nav>
+
+<div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+	
+	<div class="w3-row w3-padding-64">
+		<div class="w3-twothird w3-container">
+			<h1 class="w3-text-teal">Tier list</h1>
+			<h3 class="w3-text-bottom">Decks in Tier 1 and 2 are ones that are known to have achieved good success against other decks/players.<h3>
+			<h1 class="w3-text-teal">Meta decks</h1>
+			<h3 class="w3-text-bottom">Meta decks are decks that are often commonly used by players in PvP. Meta decks will often change depending on newer cards or strategies, so we will keep updating this page often to keep everyone informed of newer decks.<h3>
+		</div>	
+	</div>
+	
+	<div class="w3-row w3-padding-64">
+		<div class="w3-twothird w3-container">
+			<h1 class="w3-text-teal">Tier 0</h1>
+			<h3 class="w3-text-bottom">Tier 0 decks are decks that completely dominate a meta and you either play the same deck or a deck that completely counters it (but loses to almost any other deck).<h3>
+		</div>	
+		<div class="w3-third w3-container w3-image">
+			<img src="images/tier0.jpg"></img>
+		</div>
+	</div>
+	
+	<div class="w3-row w3-padding-64">
+		<div class="w3-twothird w3-container">
+			<h1 class="w3-text-teal">Tier 1</h1>
+			<h3 class="w3-text-bottom">These decks are very well rounded. They have ways to deal with almost every deck and have very few weaknesses themselves.<h3>
+		</div>	
+		<div class="w3-third w3-container w3-image">
+			<img src="images/tier1.jpg"></img>
+		</div>
+	</div>
+	
+	<div class="w3-row w3-padding-32">
+		<div class="w3-quarter w3-container w3-image">
+			<img src="images/masked.jpg"></img>
+		</div>
+		<div class="w3-quarter w3-container">
+			<h2 class="w3-text-teal">Masked HERO</h2>
+			<h3 class="w3-text-bottom">Tier :<h3>
+			<h3 class="w3-text-bottom">1<h3>
+			<h3 class="w3-text-bottom">Cost :<h3>
+			<h3 class="w3-text-bottom">Expensive<h3>
+		</div>	
+		<div class="w3-quarter w3-container w3-image">
+			<img src="images/vampire.jpg"></img>
+		</div>
+		<div class="w3-quarter w3-container">
+			<h2 class="w3-text-teal">Vampire</h2>
+			<h3 class="w3-text-bottom">Tier :<h3>
+			<h3 class="w3-text-bottom">1<h3>
+			<h3 class="w3-text-bottom">Cost :<h3>
+			<h3 class="w3-text-bottom">Expensive<h3>
+		</div>	
+	</div>
+<!-- END MAIN -->
+</div>
+
+<script>
+
+function w3_open() {
+    document.getElementById("mySidebar").style.width = "250px";
+	document.getElementById("myOverlay").style.display = "block"
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.width = "0px";
+	document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+<footer id="myFooter">
+		<div class="w3-container w3-theme-l2 w3-padding-32 w3-center">
+			<h4>Duel Links World</h4>
+		</div>
+
+		<div class="w3-container w3-theme-l1 w3-center">
+		<p>Powered by KONAMI</p>
+		</div>
+</footer>
+
+</body>
+</html>

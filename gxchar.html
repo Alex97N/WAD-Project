@@ -1,79 +1,190 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Duel Links World</title>
-    <link href="css/style.css" rel="stylesheet"/>
+<html lang="en">
+<title>Duel Links World</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/w3-theme-black.css">
+<link rel="stylesheet" href="css.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 <style>
-html{
-    
-    background-image: url("images/backg.jpg");
-
-    height: 150%; 
-	
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
 }
-</style>	
-</head>
+</style>
 <body>
-<nav>
-    <ul>
-        <li class="sub">
-            <a href="home.html">Home</a>
-            <ul>
-                <li><a href="ygo.html">Yu-Gi-Oh!</a></li>
-                <li class="sub">
-                    <a>Series</a>
-                    <ul>
-                        <li><a href="dm.html">DM</a></li>
-                        <li><a href="gx.html">GX</a></li>
-						<li><a href="5ds.html">5Ds</a></li>             
-                    </ul>
-                </li>
-            </ul>
-        </li>
-		<li class="sub">
-            <a>Characters</a>
-            <ul>
-                <li><a href="dmchar.html">DM</a></li>
-                <li><a href="gxchar.html">GX</a></li>
-                <li><a href="5dschar.html">5Ds</a></li>
-            </ul>
-        </li>
-        <li class="sub">
-            <a>Decks</a>
-            <ul>
-                <li><a href="pvp.html">PvP</a></li>
-                <li><a href="pve.html">PvE</a></li>
-                <li><a href="farm.html">Farm</a></li>
-            </ul>
-        </li>
-        <li class="sub">
-            <a>Tips</a>
-            <ul>
-                <li><a href="gems.html">Gems</a></li>
-                <li><a href="cards.html">Cards</a></li>
-				<li><a href="strategies.html">Strategies</a></li>
-            </ul>
-        </li>
-        <li><a href="news.html">News</a></li>
-    </ul>
+
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+	<a class="w3-bar-item w3-button w3-right w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="home.html" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+	<a href="guide.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Guide</a>
+    <a href="characters.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Characters</a>
+    <a href="decks.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Decks</a>
+    <a href="news.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l4 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-padding-large w3-hover-black" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Characters</b></h4>
+  <a onclick="changeCh('1')" class="w3-bar-item w3-button w3-hover-black">Jaden Yuki</a>
+  <a onclick="changeCh('2')" class="w3-bar-item w3-button w3-hover-black">Zane Truesdale</a>
+  <a onclick="changeCh('3')" class="w3-bar-item w3-button w3-hover-black">Aster Phoenix</a>
+  <a onclick="changeCh('4')" class="w3-bar-item w3-button w3-hover-black">Chazz Princeton</a>
+  <a onclick="changeCh('5')" class="w3-bar-item w3-button w3-hover-black">Alexis Rhodes</a>
+  <a onclick="changeCh('6')" class="w3-bar-item w3-button w3-hover-black">Jesse Anderson</a>
+  <a onclick="changeCh('7')" class="w3-bar-item w3-button w3-hover-black">Dr. Vellian Crowler</a>
+  <a onclick="changeCh('8')" class="w3-bar-item w3-button w3-hover-black">Bastion Misawa</a>
+  <a onclick="changeCh('9')" class="w3-bar-item w3-button w3-hover-black">Syrus Truesdale</a>
 </nav>
 
-<div class="sidenav">
-  <a href="#about">Jaden Yuki</a>
-  <a href="#about">Aster Phoenix</a>
-  <a href="#about">Chazz Princeton</a>
-  <a href="#about">Bastion Misawa</a>
-  <a href="#about">Alexis Rhodes</a>
-  <a href="#about">Vellian Crowler</a>
-  <a href="#about">Jesse Anderson</a>
-  <a href="#about">Syrus Trusdale</a>
-  <a href="#about">Zane Trusdale</a>
-  <a href="#about">Yubel</a>
+<div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+	
+	<div class="w3-row w3-padding-64">
+		<div class="w3-half w3-container" >
+			<h1 class="w3-text-teal" id="charName">Jaden Yuki</h1>
+			<h3 class="w3-text-bottom" id="charDesc">Jaden is ready to get his game on at the premier Dueling school in the world - Duel Academy! But his less-than-stellar grades place him in Slifer Red, the lowest-ranked dorm. Still, that won't discourage him from using his super sweet Dueling instincts and his Elemental HERO Deck to make the grade. His go-to monster, Elemental HERO Neos, enhances his Fusion skills - but what sets him further apart is his ability to speak with the spirits that live inside his cards. Character Unlock Missions appear at Stage 8 (DM).<h3>
+		</div>	
+		<div class="w3-half w3-container w3-image">
+			<img src="images/characters/gx/gx01.png" id="charProf"></img>
+		</div>
+	</div>
+	
+	<div class="w3-row w3-padding-64">
+		<div class="w3-half w3-container w3-image">
+			<img src="images/cards/gx/c1.jpg" id="card1"></img>
+		</div>	
+		<div class="w3-half w3-container w3-image">
+			<img src="images/cards/gx/c2.jpg" id="card2"></img>
+		</div>
+	</div>
+	
+<!-- END MAIN -->
 </div>
+
+<script>
+
+function w3_open() {
+    document.getElementById("mySidebar").style.width = "250px";
+	document.getElementById("myOverlay").style.display = "block"
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.width = "0px";
+	document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+<script type="text/javascript">
+	
+	function changeCh(el){
+		var name = $('#charName');
+		var desc = $('#charDesc');
+		var prof = document.getElementById('charProf');
+		var c1 = document.getElementById('card1');
+		var c2 = document.getElementById('card2');
+		
+		if(el == '1'){
+			name.text('Jaden Yuki');
+			desc.text('Jaden is ready to get his game on at the premier Dueling school in the world - Duel Academy! But his less-than-stellar grades place him in Slifer Red, the lowest-ranked dorm. Still, that won\'t discourage him from using his super sweet Dueling instincts and his Elemental HERO Deck to make the grade. His go-to monster, Elemental HERO Neos, enhances his Fusion skills - but what sets him further apart is his ability to speak with the spirits that live inside his cards. Character Unlock Missions appear at Stage 8 (DM).');
+			prof.src = "images/characters/gx/gx01.png";
+			c1.src = "images/cards/gx/c1.jpg";
+			c2.src = "images/cards/gx/c2.jpg";
+		}
+		
+		if(el == '2'){
+			name.text('Zane Truesdale');
+			desc.text('After graduating from Duel Academy, Zane Truesdale was on the fast track to becoming the greatest Duelist in the pro leagues. However, his defeat against Aster Phoenix set him on a dark path where his only desire was victory - at any cost. As the master of the Cyber Style, Zane uses Cyber End Dragon to power his Underworld Deck with forbidden techniques.');
+			prof.src = "images/characters/gx/gx02.png";
+			c1.src = "images/cards/gx/c3.jpg";
+			c2.src = "images/cards/gx/c4.jpg";
+		}
+		
+		if(el == '3'){
+			name.text('Aster Phoenix');
+			desc.text('Though Aster Phoenix is tearing up the professional Dueling circuit, he enrolled in Duel Academy with a secret purpose in mind. His father was a card designer who created Aster\'s Destiny HEROES. By avenging his father, Aster regained "Destiny HERO - Plasma".');
+			prof.src = "images/characters/gx/gx03.png";
+			c1.src = "images/cards/gx/c5.jpg";
+			c2.src = "images/cards/gx/c6.jpg";
+		}
+		
+		if(el == '4'){
+			name.text('Chazz Princeton');
+			desc.text('Formerly an elite Obelisk Blue student, consecutive defeats sent Chazz\'s reputation plummeting. But rising from the depths of despair, he\'s back to Chazz it up! He uses various types of cards, from the quirky Ojama brothers to Armed Dragons and XYZ monsters. Character Unlock Missions appear at Stage 6 (GX).');
+			prof.src = "images/characters/gx/gx05.png";
+			c1.src = "images/cards/gx/c7.jpg";
+			c2.src = "images/cards/gx/c8.jpg";
+		}
+		
+		if(el == '5'){
+			name.text('Alexis Rhodes');
+			desc.text('Even among the best Duelists in Obelisk Blue, Alexis stands at the top of her class. Though she\'s popular among the boys, her one true love is Dueling. She\'s not only an expert at Fusion and Ritual Summons, but her Cyber Ladies are always ready to kick the competition. Character Unlock Missions appear at Stage 11 (GX).');
+			prof.src = "images/characters/gx/gx06.png";
+			c1.src = "images/cards/gx/c9.jpg";
+			c2.src = "images/cards/gx/c10.jpg";
+		}
+		
+		if(el == '6'){
+			name.text('Jesse Anderson');
+			desc.text('An exchange student from North Academy, Jesse and Jaden have one thing in common: They both can see card spirits. This shared ability makes them fast friends. Jesse has a deep bond with his "Crystal Beasts", treating them as his family.');
+			prof.src = "images/characters/gx/gx04.png";
+			c1.src = "images/cards/gx/c11.jpg";
+			c2.src = "images/cards/gx/c12.jpg";
+		}
+		
+		if(el == '7'){
+			name.text('Dr. Vellian Crowler');
+			desc.text('Dr. Crowler is Duel Academy\'s #1 professor (or so he claims). But as the instructor in basic duel training, his skills with Ancient Gear monsters are unquestioned. At first, Dr. Crowler was focused on expelling Jaden from Duel Academy, but his views changed over time. What hasn\'t changed is his erratic behavior that has his students questioning his PhD.');
+			prof.src = "images/characters/gx/gx07.png";
+			c1.src = "images/cards/gx/c13.jpg";
+			c2.src = "images/cards/gx/c14.jpg";
+		}
+		
+		if(el == '8'){
+			name.text('Bastion Misawa');
+			desc.text('As Ra Yellow\'s resident genius, Bastion wields six different decks so that he\'ll have the optimal cards for any Duel. Someone with this much skill should stand out amongst his peers... but he\'s always in the background. His ace monster may appear to be "Water Dragon", but his real ace is a different monster.');
+			prof.src = "images/characters/gx/gx10.png";
+			c1.src = "images/cards/gx/c15.jpg";
+			c2.src = "images/cards/gx/c16.jpg";
+		}
+		
+		if(el == '9'){
+			name.text('Syrus Truesdale');
+			desc.text('Unlike his elite brother Zane, Syrus has a hard time believing in his own skills. It doesn\'t help that when Syrus first arrives at Duel Academy, he\'s placed in the lowest-ranked Slifer Red dormitory. But by competing - and befriending - many Duelists, Syrus gains confidence in himself and his abilities. His favorite monsters are Machine-Type Vehicroids.');
+			prof.src = "images/characters/gx/gx12.png";
+			c1.src = "images/cards/gx/c17.jpg";
+			c2.src = "images/cards/gx/c18.jpg";
+		}
+			
+	}
+	
+	
+</script>
+
+<footer id="myFooter">
+		<div class="w3-container w3-theme-l2 w3-padding-32 w3-center">
+			<h4>Duel Links World</h4>
+		</div>
+
+		<div class="w3-container w3-theme-l1 w3-center">
+		<p>Powered by KONAMI</p>
+		</div>
+</footer>
 
 </body>
 </html>

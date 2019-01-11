@@ -1,65 +1,97 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Duel Links World</title>
-    <link href="css/style.css" rel="stylesheet"/>
+<html lang="en">
+<title>Duel Links World</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/w3-theme-black.css">
+<link rel="stylesheet" href="css.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
 <style>
-html{
-    
-    background-image: url("images/homebackg.jpg");
-
-    height: 150%; 
-	
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
 }
-</style>	
-</head>
+</style>
 <body>
-<nav>
-    <ul>
-        <li class="sub">
-            <a href="home.html">Home</a>
-            <ul>
-                <li><a href="ygo.html">Yu-Gi-Oh!</a></li>
-                <li class="sub">
-                    <a>Series</a>
-                    <ul>
-                        <li><a href="dm.html">DM</a></li>
-                        <li><a href="gx.html">GX</a></li>
-						<li><a href="5ds.html">5Ds</a></li>             
-                    </ul>
-                </li>
-            </ul>
-        </li>
-		<li class="sub">
-            <a>Characters</a>
-            <ul>
-                <li><a href="dmchar.html">DM</a></li>
-                <li><a href="gxchar.html">GX</a></li>
-                <li><a href="5dschar.html">5Ds</a></li>
-            </ul>
-        </li>
-        <li class="sub">
-            <a>Decks</a>
-            <ul>
-                <li><a href="pvp.html">PvP</a></li>
-                <li><a href="pve.html">PvE</a></li>
-                <li><a href="farm.html">Farm</a></li>
-            </ul>
-        </li>
-        <li class="sub">
-            <a>Tips</a>
-            <ul>
-                <li><a href="gems.html">Gems</a></li>
-                <li><a href="cards.html">Cards</a></li>
-				<li><a href="strategies.html">Strategies</a></li>
-            </ul>
-        </li>
-        <li><a href="news.html">News</a></li>
-    </ul>
-</nav>
+
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a href="home.html" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+	<a href="guide.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Guide</a>
+    <a href="characters.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Characters</a>
+    <a href="decks.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Decks</a>
+    <a href="news.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>
+  </div>
+</div>
+
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main">
+
+  
+	<div class="w3-container w3-center w3-padding-32">
+		<img src="images/main.png"></img>
+    </div>
+	<div class="w3-container w3-center w3-padding-32">
+		<div class="w3-third w3-container">
+			<div class="w3-button">
+				<a href="https://itunes.apple.com/app/id1068378177/"><img src="images/btn_app_store.png"></img></a>
+			</div>
+		</div>
+		<div class="w3-third w3-container">
+			<div class="w3-button">
+				<a href="https://play.google.com/store/apps/details?id=jp.konami.duellinks"><img src="images/btn_google_play.png"></img></a>
+			</div>
+		</div>
+		<div class="w3-third w3-container">
+			<div class="w3-button">
+				<a href="https://store.steampowered.com/app/601510/YuGiOh_Duel_Links/"><img src="images/btn_steam.png"></img></a>
+			</div>
+		</div>
+	</div>
+	<div class="w3-container w3-center w3-padding-32">
+		<div class="w3-container w3-center">
+			<img src="images/second.png"></img>
+		</div>
+		<div  class="w3-container w3-center w3-button">
+			<a href="about.html"><img  src="images/about_btn.png"></img></a>
+		</div>
+	</div>
+	<div class="w3-container w3-center w3-padding-32">
+		<div class="w3-container w3-center">
+			<img src="images/third.png"></img>
+		</div>
+		<div class="w3-container w3-center w3-button">
+			<a href="guide.html"><img src="images/guide_btn.png"></img></a>
+		</div>
+	</div>
+	<div class="w3-container w3-center w3-padding-32">
+		<div class="w3-container w3-center">
+			<img src="images/fourth.png"></img>
+		</div>
+		<div class="w3-container w3-center w3-button">
+			<a href="characters.html"><img src="images/char_btn.png"></img></a>
+		</div>
+	</div>
+	
+	<footer id="myFooter">
+		<div class="w3-container w3-theme-l2 w3-padding-32 w3-center">
+			<h4>Duel Links World</h4>
+		</div>
+
+		<div class="w3-container w3-theme-l1 w3-center">
+		<p>Powered by KONAMI</p>
+		</div>
+	</footer>
+
+<!-- END MAIN -->
+</div>
+
 </body>
 </html>

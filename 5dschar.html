@@ -1,78 +1,155 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Duel Links World</title>
-    <link href="css/style.css" rel="stylesheet"/>
+<html lang="en">
+<title>Duel Links World</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/w3-theme-black.css">
+<link rel="stylesheet" href="css.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 <style>
-html{
-    
-    background-image: url("images/backg.jpg");
-
-    height: 150%; 
-	
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
 }
-</style>	
-</head>
+</style>
 <body>
-<nav>
-    <ul>
-        <li class="sub">
-            <a href="home.html">Home</a>
-            <ul>
-                <li><a href="ygo.html">Yu-Gi-Oh!</a></li>
-                <li class="sub">
-                    <a>Series</a>
-                    <ul>
-                        <li><a href="dm.html">DM</a></li>
-                        <li><a href="gx.html">GX</a></li>
-						<li><a href="5ds.html">5Ds</a></li>             
-                    </ul>
-                </li>
-            </ul>
-        </li>
-		<li class="sub">
-            <a>Characters</a>
-            <ul>
-                <li><a href="dmchar.html">DM</a></li>
-                <li><a href="gxchar.html">GX</a></li>
-                <li><a href="5dschar.html">5Ds</a></li>
-            </ul>
-        </li>
-        <li class="sub">
-            <a>Decks</a>
-            <ul>
-                <li><a href="pvp.html">PvP</a></li>
-                <li><a href="pve.html">PvE</a></li>
-                <li><a href="farm.html">Farm</a></li>
-            </ul>
-        </li>
-        <li class="sub">
-            <a>Tips</a>
-            <ul>
-                <li><a href="gems.html">Gems</a></li>
-                <li><a href="cards.html">Cards</a></li>
-				<li><a href="strategies.html">Strategies</a></li>
-            </ul>
-        </li>
-        <li><a href="news.html">News</a></li>
-    </ul>
+
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+	<a class="w3-bar-item w3-button w3-right w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="home.html" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+	<a href="guide.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Guide</a>
+    <a href="characters.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Characters</a>
+    <a href="decks.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Decks</a>
+    <a href="news.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l4 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-padding-large w3-hover-black" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Characters</b></h4>
+  <a onclick="changeCh('1')" class="w3-bar-item w3-button w3-hover-black">Yusei Fudo</a>
+  <a onclick="changeCh('2')" class="w3-bar-item w3-button w3-hover-black">Crow Hogan</a>
+  <a onclick="changeCh('3')" class="w3-bar-item w3-button w3-hover-black">Akiza Izinski</a>
+  <a onclick="changeCh('4')" class="w3-bar-item w3-button w3-hover-black">Leo</a>
+  <a onclick="changeCh('5')" class="w3-bar-item w3-button w3-hover-black">Luna</a>
 </nav>
 
-<div class="sidenav">
-  <a href="#about">Yusei Fudo</a>
-  <a href="#about">Jack Atlas</a>
-  <a href="#about">Akiza Izinski</a>
-  <a href="#about">Crow Hogan</a>
-  <a href="#about">Leo</a>
-  <a href="#about">Luna</a>
-  <a href="#about">Kalin Kessler</a>
-  <a href="#about">Carly Carmine</a>
-  <a href="#about">Tetsu Trudge</a>
+<div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+	
+	<div class="w3-row w3-padding-64">
+		<div class="w3-half w3-container" >
+			<h1 class="w3-text-teal" id="charName">Yusei Fudo</h1>
+			<h3 class="w3-text-bottom" id="charDesc">Though calm and collected, no one can deny that a burning fire rages in Yusei's heart. Through his bond of friendship and his destiny as a Signer, Yusei has saved the world countless times. His Junk Deck focuses on low Level monsters, but he extracts their full potential thru Synchro Summoning. His go-to monster is the Signer Dragon "Stardust Dragon"<h3>
+		</div>	
+		<div class="w3-half w3-container w3-image">
+			<img src="images/characters/5ds/5ds01.png" id="charProf"></img>
+		</div>
+	</div>
+	
+	<div class="w3-row w3-padding-64">
+		<div class="w3-half w3-container w3-image">
+			<img src="images/cards/5ds/c1.jpg" id="card1"></img>
+		</div>	
+		<div class="w3-half w3-container w3-image">
+			<img src="images/cards/5ds/c2.jpg" id="card2"></img>
+		</div>
+	</div>
+	
+<!-- END MAIN -->
 </div>
+
+<script>
+
+function w3_open() {
+    document.getElementById("mySidebar").style.width = "250px";
+	document.getElementById("myOverlay").style.display = "block"
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.width = "0px";
+	document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+<script type="text/javascript">
+	
+	function changeCh(el){
+		var name = $('#charName');
+		var desc = $('#charDesc');
+		var prof = document.getElementById('charProf');
+		var c1 = document.getElementById('card1');
+		var c2 = document.getElementById('card2');
+		
+		if(el == '1'){
+			name.text('Yusei Fudo');
+			desc.text('Though calm and collected, no one can deny that a burning fire rages in Yusei\'s heart. Through his bond of friendship and his destiny as a Signer, Yusei has saved the world countless times. His Junk Deck focuses on low Level monsters, but he extracts their full potential thru Synchro Summoning. His go-to monster is the Signer Dragon "Stardust Dragon".');
+			prof.src = "images/characters/5ds/5ds01.png";
+			c1.src = "images/cards/5ds/c1.jpg";
+			c2.src = "images/cards/5ds/c2.jpg";
+		}
+		
+		if(el == '2'){
+			name.text('Crow Hogan');
+			desc.text('Yusei and Jack\'s friend since childhood, Crow\'s rough exterior hides a kind heart. He raises orphans, affectionately calling them his "jackals." During his battle against the Dark Signers, he became a Signer himself. With his Blackwing Deck, he outwits his opponents to victory. His ace monster is the Signer Dragon "Black-Winged Dragon".');
+			prof.src = "images/characters/5ds/5ds03.png";
+			c1.src = "images/cards/5ds/c3.jpg";
+			c2.src = "images/cards/5ds/c4.jpg";
+		}
+		
+		if(el == '3'){
+			name.text('Akiza Izinski');
+			desc.text('A Signer bearing the Mark of the Crimson Dragon, Akiza was branded as a witch and widely feared for her psychic ability to make damage from Duels real. Her powers isolated her from society - until Yusei\'s kindness allowed her to open her heart. Her Plant-Type Deck focuses on roses. Her ace monster is one of the Signer Dragons: "Black Rose Dragon".');
+			prof.src = "images/characters/5ds/5ds04.png";
+			c1.src = "images/cards/5ds/c5.jpg";
+			c2.src = "images/cards/5ds/c6.jpg";
+		}
+		
+		if(el == '4'){
+			name.text('Leo');
+			desc.text('As Luna\'s older twin brother, Leo feels it\'s his duty to protect his frail sister. With boundless energy, no mistake or pratfall will get him down. His Machine-Type Deck is overflowing with Morphtronics. His ace monster is "Power Tool Dragon".');
+			prof.src = "images/characters/5ds/5ds05.png";
+			c1.src = "images/cards/5ds/c7.jpg";
+			c2.src = "images/cards/5ds/c8.jpg";
+		}
+		
+		if(el == '5'){
+			name.text('Luna');
+			desc.text('Leo\'s twin sister is also one of the Signers. Completely opposite to Leo, Luna is gentle, polite and mature for her age. She has the ability to hear the voices of Duel Monsters spirits, so she builds her Fairy Deck using those same monsters. Her ace monster is not only a Signer Dragon, but also her friend: "Ancient Fairy Dragon".');
+			prof.src = "images/characters/5ds/5ds06.png";
+			c1.src = "images/cards/5ds/c9.jpg";
+			c2.src = "images/cards/5ds/c10.jpg";
+		}
+		
+			
+	}
+	
+	
+</script>
+
+<footer id="myFooter">
+		<div class="w3-container w3-theme-l2 w3-padding-32 w3-center">
+			<h4>Duel Links World</h4>
+		</div>
+
+		<div class="w3-container w3-theme-l1 w3-center">
+		<p>Powered by KONAMI</p>
+		</div>
+</footer>
 
 </body>
 </html>

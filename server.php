@@ -59,41 +59,60 @@ if (isset($_POST['reg_user'])) {
 if (isset($_POST['login_user'])) {
     $username = mysqli_real_escape_string($db, $_POST['username']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
-
     if (empty($username)) {
         array_push($errors, "Username is required");
     }
-    if (empty($password)) {
-    if (empty($password)) {
-        array_push($errors, "Password is required");
-    }
-
-    if (count($errors) == 0) {
-        $password = md5($password);
-        $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-        $results = mysqli_query($db, $query);
-        if (mysqli_num_rows($results) == 1) {
-            $_SESSION['username'] = $username;
-            $_SESSION['success'] = "You are now logged in";
-            header('location: menu.php');
-        }else {
-            array_push($errors, "Wrong username/password combination");
+    if (empty($password)) { array_push($errors, "Password is required"); }
+    else {
+        if (count($errors) == 0) {
+            $password = md5($password);
+            $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+            $results = mysqli_query($db, $query);
+            if (mysqli_num_rows($results) == 1) {
+                $_SESSION['username'] = $username;
+                $_SESSION['success'] = "You are now logged in";
+                header('location: menu.php');
+            } else {
+                array_push($errors, "Wrong username/password combination");
+            }
         }
     }
 }
 
-// SAVE PHOTO
 
-if (isset($_POST['save_photo'])){
+if(isset($_POST['save_deck'])){
 
-    $pname = mysqli_real_escape_string($db, $_POST['packetname']);
+
+    $dn = mysqli_real_escape_string($db, $_POST['packetname']);
     $pid = mysqli_real_escape_string($db, $_POST['playerId']);
-    $file = file_get_contents($_FILES['pic']['tmp_name']);
+    $pn = mysqli_real_escape_string($db, $_POST['playerName']);
+    $plink = mysqli_real_escape_string($db, $_POST['decklink']);
 
-    $deck = "INSERT INTO decks(player)
-  			  VALUES('$pid')";
-    $results = mysqli_query($db, $deck
-    );
+    $query = "INSERT INTO decks(dname, player, playerName,deckLink) 
+  			  VALUES('$dn', '$pid', '$pn','$plink')";
+
+    $results = mysqli_query($db, $query);
+}
+
+if(isset($_POST['ban'])){
+
+
+    $pn = mysqli_real_escape_string($db, $_POST['pn']);
+
+    $query = "UPDATE users SET status='banned' WHERE id='$pn'";
+
+    $results = mysqli_query($db, $query);
+
+}
+
+if(isset($_POST['unban'])){
+
+
+    $pn = mysqli_real_escape_string($db, $_POST['pn']);
+
+    $query = "UPDATE users SET status='active' WHERE id='$pn'";
+
+    $results = mysqli_query($db, $query);
 
 }
 

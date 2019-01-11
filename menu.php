@@ -1,6 +1,5 @@
 <?php
-session_start();
-
+include('./server.php');
 if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
     header('location: login.php');
@@ -10,6 +9,7 @@ if (isset($_GET['logout'])) {
     unset($_SESSION['username']);
     header("location: login.php");
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -94,8 +94,47 @@ if (isset($_GET['logout'])) {
         ?>
     <?php endif ?>
     <?php if ( $var == 1 ) :?>
-        <p>Hello <?php echo $usr; ?>(ADMIN)</p>
-        <a href="menu.php?logout='1'" style="color: red;">logout</a>
+
+        <div class="w3-container">
+            <div class="w3-container w3-half">
+                <h1>Duelist : <strong><?php echo $usr; ?></strong> (ADMIN) </h1>
+                <h1>Status : <strong><?php echo $state; ?></strong></h1>
+                <button class="btn">
+                    <a href="menu.php?logout='1'">LOGOUT</a>
+                </button>
+            </div>
+            <div class="w3-container w3-half">
+                <form method="post" action="menu.php">
+                    <div class="input-group">
+                        <label>Player Username</label>
+                        <input type="text" name="pn">
+                    </div>
+                    <div class="input-group">
+                        <button class="btn" type="submit" name="ban">BAN USER</button>
+                    </div>
+                    <div class="input-group">
+                        <button class="btn" type="submit" name="unban">UNABAN USER</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="w3-container">
+            <?php
+            $sql = "SELECT id, username, email, role, status FROM users";
+            $result = mysqli_query($db, $sql);
+
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo "id: " . $row["id"]. " - Username: " . $row["username"]. " - Email " . $row["email"]. " - Role : " . $row["role"]. " - Status " . $row["status"]. " <br>";
+                }
+            } else {
+                echo "0 results";
+            }
+            ?>
+        </div>
+        <br><br><br><br><br><br>
     <?php endif ?>
     <?php if ( $var == 2 ) :?>
         <div class="w3-container">
@@ -110,7 +149,7 @@ if (isset($_GET['logout'])) {
                 <div class="header">
                     <h2>Deck</h2>
                 </div>
-                <form method="post" action="menu.php">
+                <form method="post" action="menu.php" enctype="multipart/form-data">
                     <div class="input-group">
                         <label>Packet Name</label>
                         <input type="text" name="packetname">
@@ -119,21 +158,38 @@ if (isset($_GET['logout'])) {
                         <label>Player ID</label>
                         <input type="text" name="playerId" value="<?php echo $idp?>">
                     </div>
-                    <div>
-                        <input type="file" class="btn" name="pic" accept="image/*">
+                    <div class="input-group">
+                        <label>Player Name</label>
+                        <input type="text" name="playerName">
                     </div>
                     <div class="input-group">
-                        <button class="btn" type="submit" name="save_photo">SAVE</button>
+                        <label>Deck Link</label>
+                        <input type="text" name="decklink">
+                    </div>
+                    <div class="input-group">
+                        <button class="btn" type="submit" name="save_deck">SAVE</button>
                     </div>
                 </form>
             </div>
         </div>
         <div class="w3-container">
-            
+            <?php
+            $sql = "SELECT dname, player, playerName, deckLink FROM decks";
+            $result = mysqli_query($db, $sql);
+
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo "Deck Name : " . $row["dname"]. " - Player Id: " . $row["player"]. " - Player Name " . $row["playerName"]. " - Deck Link : " . $row["deckLink"]. " <br>";
+                }
+            } else {
+                echo "0 results";
+            }
+            ?>
         </div>
     <?php endif ?>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
 <footer id="myFooter">
     <div class="w3-container w3-theme-l2 w3-padding-32 w3-center">
         <h4>Duel Links World</h4>
